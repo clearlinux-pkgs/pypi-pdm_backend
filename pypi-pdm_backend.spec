@@ -4,13 +4,13 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pdm_backend
-Version  : 2.0.6
-Release  : 1
-URL      : https://files.pythonhosted.org/packages/3e/53/251901adf96d1d132a3855c93a520082ee168330814ebd3fcd11858fb9c7/pdm_backend-2.0.6.tar.gz
-Source0  : https://files.pythonhosted.org/packages/3e/53/251901adf96d1d132a3855c93a520082ee168330814ebd3fcd11858fb9c7/pdm_backend-2.0.6.tar.gz
+Version  : 2.1.1
+Release  : 2
+URL      : https://files.pythonhosted.org/packages/91/f6/6be0c3e7e1f3b249bec2998ca611bce0378ad23a37115f3f2748c5657329/pdm_backend-2.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/91/f6/6be0c3e7e1f3b249bec2998ca611bce0378ad23a37115f3f2748c5657329/pdm_backend-2.1.1.tar.gz
 Summary  : The build backend used by PDM that supports latest packaging standards
 Group    : Development/Tools
-License  : Apache-2.0 BSD-2-Clause BSD-3-Clause MIT MPL-2.0
+License  : Apache-2.0 BSD-2-Clause MIT
 Requires: pypi-pdm_backend-license = %{version}-%{release}
 Requires: pypi-pdm_backend-python = %{version}-%{release}
 Requires: pypi-pdm_backend-python3 = %{version}-%{release}
@@ -51,10 +51,10 @@ python3 components for the pypi-pdm_backend package.
 
 
 %prep
-%setup -q -n pdm_backend-2.0.6
-cd %{_builddir}/pdm_backend-2.0.6
+%setup -q -n pdm_backend-2.1.1
+cd %{_builddir}/pdm_backend-2.1.1
 pushd ..
-cp -a pdm_backend-2.0.6 buildavx2
+cp -a pdm_backend-2.1.1 buildavx2
 popd
 
 %build
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683151296
+export SOURCE_DATE_EPOCH=1687797067
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -93,9 +93,6 @@ cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/packaging/LICENSE
 cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/pyproject_metadata/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/4339a5c41946d5ce6e23a8b8c4fff00d838d40c9 || :
 cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/tomli/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/9da6ca26337a886fb3e8d30efd4aeda623dc9ade || :
 cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/tomli_w/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/9da6ca26337a886fb3e8d30efd4aeda623dc9ade || :
-cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/validate_pyproject/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/8adfd96afd2bccd82fb70537f3e8e47296a6eb47 || :
-cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/validate_pyproject/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/4fa8d983d44984c7a1d7bbca6971242b10155776 || :
-cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/validate_pyproject/_vendor/fastjsonschema/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/8adfd96afd2bccd82fb70537f3e8e47296a6eb47 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -116,9 +113,7 @@ popd
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-pdm_backend/4339a5c41946d5ce6e23a8b8c4fff00d838d40c9
-/usr/share/package-licenses/pypi-pdm_backend/4fa8d983d44984c7a1d7bbca6971242b10155776
 /usr/share/package-licenses/pypi-pdm_backend/598f87f072f66e2269dd6919292b2934dbb20492
-/usr/share/package-licenses/pypi-pdm_backend/8adfd96afd2bccd82fb70537f3e8e47296a6eb47
 /usr/share/package-licenses/pypi-pdm_backend/9da6ca26337a886fb3e8d30efd4aeda623dc9ade
 /usr/share/package-licenses/pypi-pdm_backend/f15bd5033216f10c392e98887c39374601c898ac
 /usr/share/package-licenses/pypi-pdm_backend/fdc0e4eabc45522b079deff7d03d70528d775dc0
