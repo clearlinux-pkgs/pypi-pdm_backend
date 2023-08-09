@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pdm_backend
-Version  : 2.1.4
-Release  : 5
-URL      : https://files.pythonhosted.org/packages/f9/bd/393be60c563dd0b25e341f6abef396309f6c12d2bfee4014e521f96b1286/pdm_backend-2.1.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/f9/bd/393be60c563dd0b25e341f6abef396309f6c12d2bfee4014e521f96b1286/pdm_backend-2.1.4.tar.gz
+Version  : 2.1.5
+Release  : 6
+URL      : https://files.pythonhosted.org/packages/12/0d/cfe7ce34e411d44bd4e1863c8332365e8bfddedc84a0c51f18ab76ae4aec/pdm_backend-2.1.5.tar.gz
+Source0  : https://files.pythonhosted.org/packages/12/0d/cfe7ce34e411d44bd4e1863c8332365e8bfddedc84a0c51f18ab76ae4aec/pdm_backend-2.1.5.tar.gz
 Summary  : The build backend used by PDM that supports latest packaging standards
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause MIT
@@ -51,10 +51,10 @@ python3 components for the pypi-pdm_backend package.
 
 
 %prep
-%setup -q -n pdm_backend-2.1.4
-cd %{_builddir}/pdm_backend-2.1.4
+%setup -q -n pdm_backend-2.1.5
+cd %{_builddir}/pdm_backend-2.1.5
 pushd ..
-cp -a pdm_backend-2.1.4 buildavx2
+cp -a pdm_backend-2.1.5 buildavx2
 popd
 
 %build
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689261478
+export SOURCE_DATE_EPOCH=1691593666
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
