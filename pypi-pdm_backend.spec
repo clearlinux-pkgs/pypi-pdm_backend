@@ -5,7 +5,7 @@
 #
 Name     : pypi-pdm_backend
 Version  : 2.1.7
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/8b/c0/1807f0208baf4161f8df9c50c0e98a09e1a4bb0f798fddc336fc64e2ee23/pdm_backend-2.1.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/8b/c0/1807f0208baf4161f8df9c50c0e98a09e1a4bb0f798fddc336fc64e2ee23/pdm_backend-2.1.7.tar.gz
 Summary  : The build backend used by PDM that supports latest packaging standards
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1696864261
+export SOURCE_DATE_EPOCH=1697321801
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -113,7 +113,7 @@ cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/packaging/LICENSE
 cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/pyproject_metadata/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/4339a5c41946d5ce6e23a8b8c4fff00d838d40c9 || :
 cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/tomli/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/9da6ca26337a886fb3e8d30efd4aeda623dc9ade || :
 cp %{_builddir}/pdm_backend-%{version}/src/pdm/backend/_vendor/tomli_w/LICENSE %{buildroot}/usr/share/package-licenses/pypi-pdm_backend/9da6ca26337a886fb3e8d30efd4aeda623dc9ade || :
-pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
+python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -123,7 +123,7 @@ CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -m64 -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -m64 -march=x86-64-v3 "
-pip install --root=%{buildroot}-v3 --no-deps --ignore-installed dist/*.whl
+python3 -m installer --destdir=%{buildroot}-v3 dist/*.whl
 popd
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
