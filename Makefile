@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pdm_backend
-URL = https://files.pythonhosted.org/packages/0c/aa/ef4eee288f60f4bb195dda83567d54bef9c5aa651ec0f6092d10086fdaf4/pdm_backend-2.3.0.tar.gz
+URL = https://files.pythonhosted.org/packages/70/f4/eaa4da6e3eaa32d902177e0b81563bb5526b2c387aa312d0dfbecf3c7109/pdm_backend-2.3.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
