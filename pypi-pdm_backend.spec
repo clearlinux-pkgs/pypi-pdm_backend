@@ -7,7 +7,7 @@
 #
 Name     : pypi-pdm_backend
 Version  : 2.4.3
-Release  : 22
+Release  : 23
 URL      : https://files.pythonhosted.org/packages/d9/bf/d75d568521cef171ae9138d9ab55c169a98ee803853ca87b7096e4636d5b/pdm_backend-2.4.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d9/bf/d75d568521cef171ae9138d9ab55c169a98ee803853ca87b7096e4636d5b/pdm_backend-2.4.3.tar.gz
 Summary  : The build backend used by PDM that supports latest packaging standards
